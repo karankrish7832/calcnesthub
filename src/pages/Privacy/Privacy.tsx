@@ -62,6 +62,34 @@ const Privacy = () => {
             </section>
 
             <section>
+                <h2>{t("privacy.countryAndPreferences.title")}</h2>
+
+                <p>
+                    {t(
+                        "privacy.countryAndPreferences.paragraph1"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.countryAndPreferences.paragraph2"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.countryAndPreferences.paragraph3"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.countryAndPreferences.paragraph4"
+                    )}
+                </p>
+            </section>
+
+            <section>
                 <h2>{t("privacy.googleAnalytics.title")}</h2>
 
                 <p>

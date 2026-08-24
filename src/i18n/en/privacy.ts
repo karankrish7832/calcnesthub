@@ -33,6 +33,22 @@ const privacy = {
             "The values you enter into calculators are processed to generate the requested results. CalcNestHub does not currently provide a feature for storing your calculator history in a personal account.",
     },
 
+    countryAndPreferences: {
+        title: "Country and Language Preferences",
+
+        paragraph1:
+            "CalcNestHub uses an IP-based country detection service to determine your approximate country when you first visit the website. This helps us provide a suitable default country for the website experience.",
+
+        paragraph2:
+            "For this purpose, CalcNestHub uses countries.dev. Your IP address is used by the service to determine your country and return country-level information such as a country code. CalcNestHub does not use this service to determine your precise location, such as your address or GPS coordinates.",
+
+        paragraph3:
+            "The country detected from your IP address is stored in your browser's local storage so that your selected or detected country can be remembered when you return to the website. If you manually select a different country, your selection is stored instead.",
+
+        paragraph4:
+            "Your selected language is also stored in your browser's local storage so that your language preference can be remembered when you return to CalcNestHub. You can clear these stored preferences through your browser settings.",
+    },
+
     googleAnalytics: {
         title: "Google Analytics",
 
