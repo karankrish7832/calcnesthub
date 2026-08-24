@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
@@ -8,6 +8,16 @@ import styles from "./CalculatorLayout.module.css";
 const CalculatorLayout = () => {
     const [search, setSearch] = useState("");
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const mainRef = useRef<HTMLElement>(null);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        mainRef.current?.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, [pathname]);
 
     const clearSearch = () => {
         setSearch("");
@@ -51,7 +61,10 @@ const CalculatorLayout = () => {
                     />
                 )}
 
-                <main className={styles.main}>
+                <main
+                    ref={mainRef}
+                    className={styles.main}
+                >
                     <div className={styles.content}>
                         <Outlet />
                     </div>

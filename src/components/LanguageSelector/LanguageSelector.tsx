@@ -11,6 +11,9 @@ const LanguageSelector = () => {
         label: language.name,
     }));
 
+    const selectedLanguage =
+        i18n.language.split("-")[0];
+
     const handleLanguageChange = (value: string) => {
         i18n.changeLanguage(value);
     };
@@ -19,7 +22,7 @@ const LanguageSelector = () => {
         <div className={styles.wrapper}>
             <SelectDropdown
                 options={options}
-                value={i18n.language}
+                value={selectedLanguage}
                 onChange={handleLanguageChange}
                 searchable={false}
                 placeholder={t("language.select")}

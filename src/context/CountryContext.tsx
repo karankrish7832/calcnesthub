@@ -30,29 +30,18 @@ interface SavedCountry {
     inactiveSince: number | null;
 }
 
+interface CountryDetectionResponse {
+    countryCode?: string;
+}
+
 const FALLBACK_COUNTRY_CODE = "IN";
+
 const STORAGE_KEY = "calcnesthub-country";
 
-const INACTIVITY_LIMIT = 5 * 60 * 1000; // 15 minutes
+const INACTIVITY_LIMIT = 5 * 60 * 1000; // 5 minutes
 const RETENTION_LIMIT = 10 * 60 * 60 * 1000; // 10 hours
 
-const getDeviceCountry = (): CountryConfig => {
-    const locale = navigator.language;
-
-    const countryCode =
-        locale.split("-")[1]?.toUpperCase();
-
-    if (countryCode) {
-        const detectedCountry = countries.find(
-            (country) =>
-                country.code === countryCode
-        );
-
-        if (detectedCountry) {
-            return detectedCountry;
-        }
-    }
-
+const getFallbackCountry = (): CountryConfig => {
     return (
         countries.find(
             (country) =>
@@ -60,6 +49,43 @@ const getDeviceCountry = (): CountryConfig => {
         ) ?? countries[0]
     );
 };
+
+const detectCountryByIP =
+    async (): Promise<CountryConfig> => {
+        try {
+            const response = await fetch(
+                "https://countries.dev/ip"
+            );
+
+            if (!response.ok) {
+                throw new Error(
+                    "Failed to detect country"
+                );
+            }
+
+            const data =
+                (await response.json()) as CountryDetectionResponse;
+
+            const countryCode =
+                data.countryCode?.toUpperCase();
+
+            if (countryCode) {
+                const detectedCountry =
+                    countries.find(
+                        (country) =>
+                            country.code === countryCode
+                    );
+
+                if (detectedCountry) {
+                    return detectedCountry;
+                }
+            }
+        } catch {
+            // Fall back when country detection fails.
+        }
+
+        return getFallbackCountry();
+    };
 
 const getSavedCountry = (): SavedCountry | null => {
     try {
@@ -96,8 +122,8 @@ const getInitialCountry = (): CountryConfig => {
         /*
          * The user was inactive before returning.
          * If that inactive period has exceeded
-         * the 12-hour retention period, discard
-         * the saved country.
+         * the retention period, discard the
+         * saved country.
          */
         if (savedCountry.inactiveSince !== null) {
             const inactiveDuration =
@@ -137,7 +163,13 @@ const getInitialCountry = (): CountryConfig => {
         }
     }
 
-    return getDeviceCountry();
+    /*
+     * No valid saved country.
+     *
+     * Use fallback temporarily while the
+     * IP-based country detection runs.
+     */
+    return getFallbackCountry();
 };
 
 export const CountryProvider = ({
@@ -153,32 +185,43 @@ export const CountryProvider = ({
             null
         );
 
+    const countryInitialized =
+        useRef(false);
+
     const markActivity = () => {
-        const savedCountry = getSavedCountry();
+        const savedCountry =
+            getSavedCountry();
 
         if (!savedCountry) {
             return;
         }
 
         if (activityTimer.current) {
-            clearTimeout(activityTimer.current);
+            clearTimeout(
+                activityTimer.current
+            );
         }
 
-        activityTimer.current = setTimeout(() => {
-            const current = getSavedCountry();
+        activityTimer.current = setTimeout(
+            () => {
+                const current =
+                    getSavedCountry();
 
-            if (!current) {
-                return;
-            }
+                if (!current) {
+                    return;
+                }
 
-            localStorage.setItem(
-                STORAGE_KEY,
-                JSON.stringify({
-                    ...current,
-                    inactiveSince: Date.now(),
-                })
-            );
-        }, INACTIVITY_LIMIT);
+                localStorage.setItem(
+                    STORAGE_KEY,
+                    JSON.stringify({
+                        ...current,
+                        inactiveSince:
+                            Date.now(),
+                    })
+                );
+            },
+            INACTIVITY_LIMIT
+        );
     };
 
     const setCountry = (
@@ -227,6 +270,52 @@ export const CountryProvider = ({
         );
     };
 
+    /*
+     * Detect the user's country only when
+     * there is no saved country.
+     */
+    useEffect(() => {
+        if (countryInitialized.current) {
+            return;
+        }
+
+        countryInitialized.current = true;
+
+        const initializeCountry = async () => {
+            const savedCountry =
+                getSavedCountry();
+
+            if (savedCountry) {
+                return;
+            }
+
+            const detectedCountry =
+                await detectCountryByIP();
+
+            setCountryState(detectedCountry);
+
+            const now = Date.now();
+
+            const savedCountryData: SavedCountry = {
+                code: detectedCountry.code,
+                lastActiveAt: now,
+                inactiveSince: null,
+            };
+
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify(
+                    savedCountryData
+                )
+            );
+        };
+
+        initializeCountry();
+    }, []);
+
+    /*
+     * Track user activity.
+     */
     useEffect(() => {
         const handleActivity = () => {
             markActivity();

@@ -2,4 +2,14 @@
     <url> <loc>https://calcnest-hub.vercel.app/</loc> </url>
     <url> <loc>https://calcnest-hub.vercel.app/privacy</loc> </url>
     <url> <loc>https://calcnest-hub.vercel.app/terms</loc> </url>
-    <url> <loc>https://calcnest-hub.vercel.app/calculators/simple-interest</loc> </url> </urlset>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/simple-interest</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/compound-interest</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/emi</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/loan</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/sip</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/fixed-deposit</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/percentage</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/average</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/bmi</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/age</loc> </url>
+    <url> <loc>https://calcnest-hub.vercel.app/calculators/unit-converter</loc> </url> </urlset>

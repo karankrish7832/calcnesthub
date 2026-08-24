@@ -54,6 +54,8 @@ const Header = ({
                             src={logo}
                             alt="CalcNestHub"
                             className={styles.logo}
+                            width={249}
+                            height={150}
                         />
                     </picture>
                 </Link>
