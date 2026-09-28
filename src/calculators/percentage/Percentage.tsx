@@ -15,9 +15,8 @@ import type {
     PercentageResult,
 } from "./percentage.types";
 import { calculatePercentage } from "./percentage.utils";
-import {
-    validatePercentage,
-} from "./percentage.validation";
+import { validatePercentage} from "./percentage.validation";
+import { useCountry } from "../../context/CountryContext";
 import styles from "./Percentage.module.css";
 
 const initialValues: PercentageForm = {
@@ -27,7 +26,8 @@ const initialValues: PercentageForm = {
 };
 
 const Percentage = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
+    const { country } = useCountry();
 
     const [values, setValues] =
         useState<PercentageForm>(
@@ -45,7 +45,7 @@ const Percentage = () => {
     const firstValueInput =
         useLocalizedNumberInput({
             value: values.firstValue,
-            locale: i18n.language,
+            locale: country.locale,
             onChange: (value) => {
                 setValues((current) => ({
                     ...current,
@@ -62,7 +62,7 @@ const Percentage = () => {
     const secondValueInput =
         useLocalizedNumberInput({
             value: values.secondValue,
-            locale: i18n.language,
+            locale: country.locale,
             onChange: (value) => {
                 setValues((current) => ({
                     ...current,
@@ -235,7 +235,7 @@ const Percentage = () => {
         }
 
         return result.value.toLocaleString(
-            i18n.language,
+            country.locale,
             {
                 maximumFractionDigits: 2,
             }
