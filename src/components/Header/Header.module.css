@@ -161,6 +161,13 @@
     .menuButton {
         display: flex;
         flex-shrink: 0;
+        order: 3;
+        margin-right: 0;
+        margin-left: 8px;
+    }
+
+    .logoLink {
+        order: 1;
     }
 
     .logo {
@@ -168,15 +175,13 @@
     }
 
     .headerActions {
+        order: 2;
+        margin-left: auto;
         gap: 8px;
     }
 
     .headerActions :global(*) {
         max-width: 100%;
-    }
-
-    .headerActions {
-        margin-left: auto;
     }
 
     .desktopLanguage {
