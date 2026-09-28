@@ -19,6 +19,16 @@ const emi = {
     month: "month",
     calculate: "Calculate EMI",
     reset: "Reset",
+    keywords: [
+        "emi",
+        "emi calculator",
+        "loan emi",
+        "equated monthly instalment",
+        "loan calculator",
+        "monthly payment",
+        "loan interest",
+        "loan repayment",
+    ],
     validation: {
         loanAmountRequired: "Please enter the loan amount.",
         loanAmountInvalid: "Loan amount must be greater than 0.",

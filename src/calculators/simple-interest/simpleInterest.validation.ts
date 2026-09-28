@@ -1,10 +1,7 @@
-import type { SimpleInterestForm } from "./simpleInterest.types";
-
-export interface SimpleInterestErrors {
-    principal?: string;
-    rate?: string;
-    time?: string;
-}
+import type {
+    SimpleInterestForm,
+    SimpleInterestErrors,
+} from "./simpleInterest.types";
 
 export const validateSimpleInterest = (
     values: SimpleInterestForm
@@ -13,24 +10,63 @@ export const validateSimpleInterest = (
 
     const principal = Number(values.principal);
     const rate = Number(values.rate);
-    const time = Number(values.time);
+
+    const years = values.years.trim()
+        ? Number(values.years)
+        : 0;
+
+    const months = values.months.trim()
+        ? Number(values.months)
+        : 0;
 
     if (!values.principal) {
-        errors.principal = "calculators.simpleInterest.validation.principalRequired";
-    } else if (principal <= 0) {
-        errors.principal = "calculators.simpleInterest.validation.principalGreaterThanZero";
+        errors.principal =
+            "calculators.simpleInterest.validation.principalRequired";
+    } else if (
+        !Number.isFinite(principal) ||
+        principal <= 0
+    ) {
+        errors.principal =
+            "calculators.simpleInterest.validation.principalGreaterThanZero";
     }
 
     if (!values.rate) {
-        errors.rate = "calculators.simpleInterest.validation.rateRequired";
-    } else if (rate < 0) {
-        errors.rate = "calculators.simpleInterest.validation.rateNotNegative";
+        errors.rate =
+            "calculators.simpleInterest.validation.rateRequired";
+    } else if (
+        !Number.isFinite(rate) ||
+        rate < 0
+    ) {
+        errors.rate =
+            "calculators.simpleInterest.validation.rateNotNegative";
     }
 
-    if (!values.time) {
-        errors.time = "calculators.simpleInterest.validation.timeRequired";
-    } else if (time <= 0) {
-        errors.time = "calculators.simpleInterest.validation.timeGreaterThanZero";
+    if (
+        !Number.isFinite(years) ||
+        years < 0
+    ) {
+        errors.years =
+            "calculators.simpleInterest.validation.yearsInvalid";
+    }
+
+    if (
+        !Number.isFinite(months) ||
+        months < 0
+    ) {
+        errors.months =
+            "calculators.simpleInterest.validation.monthsInvalid";
+    }
+
+    const totalMonths =
+        years * 12 + months;
+
+    if (
+        Number.isFinite(years) &&
+        Number.isFinite(months) &&
+        totalMonths <= 0
+    ) {
+        errors.tenure =
+            "calculators.simpleInterest.validation.tenureRequired";
     }
 
     return errors;

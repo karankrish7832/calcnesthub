@@ -6,21 +6,31 @@ import type {
 export const calculateSimpleInterest = ({
     principal,
     rate,
-    time,
+    years,
+    months,
 }: SimpleInterestForm): SimpleInterestResult => {
     const principalAmount = Number(principal);
     const interestRate = Number(rate);
-    const timePeriod = Number(time);
 
-    const interest =
-        (principalAmount * interestRate * timePeriod) /
-        100;
+    const yearsValue = years.trim()
+        ? Number(years)
+        : 0;
 
-    const totalAmount =
-        principalAmount + interest;
+    const monthsValue = months.trim()
+        ? Number(months)
+        : 0;
+
+    const totalMonths = yearsValue * 12 + monthsValue;
+
+    const timeInYears = totalMonths / 12;
+
+    const interest = (principalAmount * interestRate * timeInYears) / 100;
+
+    const totalAmount = principalAmount + interest;
 
     return {
         interest,
         totalAmount,
+        totalMonths,
     };
 };
