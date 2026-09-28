@@ -80,11 +80,6 @@
         font-size: 24px;
     }
 
-    .tenureGroup {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
     .actions {
         grid-template-columns: 1fr;
     }
