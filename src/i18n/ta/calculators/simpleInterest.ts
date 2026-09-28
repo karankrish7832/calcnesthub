@@ -23,6 +23,7 @@ const simpleInterest = {
     calculateInterest: "வட்டியைக் கணக்கிடுங்கள்",
     simpleInterest: "எளிய வட்டி",
     totalAmount: "மொத்தத் தொகை",
+    reset: "மீட்டமை",
     validation: {
         principalRequired:
             "முதலீட்டுத் தொகையை உள்ளிடவும்.",

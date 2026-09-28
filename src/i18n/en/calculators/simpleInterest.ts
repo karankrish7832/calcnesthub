@@ -23,6 +23,7 @@ const simpleInterest = {
     calculateInterest: "Calculate Interest",
     simpleInterest: "Simple Interest",
     totalAmount: "Total Amount",
+    reset: "Reset",
     validation: {
         principalRequired: "Principal amount is required.",
         principalGreaterThanZero:

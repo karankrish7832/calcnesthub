@@ -35,16 +35,19 @@
 }
 
 .tenureField {
-    margin: 0;
+    margin: 4px 0 0;
     padding: 0;
     border: 0;
 }
 
 .tenureField legend {
-    margin-bottom: 8px;
+    width: 100%;
+    margin: 0 0 16px;
+    padding: 0;
     color: var(--text-primary);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
+    line-height: 1.4;
 }
 
 .tenureGroup {

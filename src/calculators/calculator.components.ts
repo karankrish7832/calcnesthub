@@ -6,4 +6,5 @@ export const calculatorComponents: Partial<
 > = {
     "simple-interest": lazy(() => import("./simple-interest/SimpleInterest")),
     "emi": lazy(() => import("./emi/EMI")),
+    "compound-interest": lazy(() => import("./compound-interest/CompoundInterest")),
 };

@@ -86,7 +86,9 @@ const EMI = () => {
         setErrors((current) => ({
             ...current,
             [name]: undefined,
-            tenure: undefined,
+            ...(name === "years" || name === "months"
+                ? { tenure: undefined }
+                : {}),
         }));
     };
 
