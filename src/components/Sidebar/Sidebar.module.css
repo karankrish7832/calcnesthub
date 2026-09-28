@@ -110,7 +110,7 @@
    Mobile Sidebar
    ================================ */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .sidebar {
         top: 72px;
         bottom: 0;

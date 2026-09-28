@@ -46,7 +46,7 @@ const Header = ({
                 >
                     <picture>
                         <source
-                            media="(max-width: 600px)"
+                            media="(max-width: 768px)"
                             srcSet={mobileLogo}
                         />
 

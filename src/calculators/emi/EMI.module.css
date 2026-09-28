@@ -34,27 +34,40 @@
     gap: 20px;
 }
 
-.calculateButton {
-    width: 100%;
-    padding: 13px 18px;
-    margin-top: 4px;
+.tenureField {
+    margin: 0;
+    padding: 0;
     border: 0;
-    border-radius: 8px;
-    background: var(--brand-blue);
-    color: #ffffff;
+}
+
+.tenureField legend {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
     font-weight: 600;
-    cursor: pointer;
-    transition:
-        background-color 0.15s ease,
-        transform 0.05s ease;
 }
 
-.calculateButton:hover {
-    background: #1d4ed8;
+.tenureGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-.calculateButton:active {
-    transform: translateY(1px);
+.error {
+    margin: 8px 0 0;
+    color: #d32f2f;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.actions button {
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -65,5 +78,14 @@
 
     .header h1 {
         font-size: 24px;
+    }
+
+    .tenureGroup {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .actions {
+        grid-template-columns: 1fr;
     }
 }

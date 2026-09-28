@@ -30,7 +30,8 @@
     line-height: 1.7;
 }
 
-.explanation ul {
+.explanation ul,
+.explanation ol {
     margin: 8px 0 16px;
     padding-left: 24px;
     color: var(--text-secondary);
