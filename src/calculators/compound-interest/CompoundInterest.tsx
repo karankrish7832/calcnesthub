@@ -16,7 +16,7 @@ import { calculateCompoundInterest } from "./compoundInterest.utils";
 import {
     validateCompoundInterest,
 } from "./compoundInterest.validation";
-import Dropdown from "../../components/Button/Dropdown/Dropdown";
+import Dropdown from "../../components/Dropdown/Dropdown";
 import Button from "../../components/Button/Button";
 import styles from "./CompoundInterest.module.css";
 
