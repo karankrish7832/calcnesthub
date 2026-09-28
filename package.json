@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite",
     "generate:sitemap": "tsc -p tsconfig.scripts.json && tsx scripts/generate-sitemap.ts",
-    "build": "npm run generate:sitemap && tsc -b && vite build",
+    "build": "npm run generate:sitemap && npm run generate:bmi-data && tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+     "generate:bmi-data": "node scripts/generate-bmi-data.mjs"
   },
   "dependencies": {
     "i18next": "^26.3.6",

@@ -8,4 +8,5 @@ export const calculatorComponents: Partial<
     "emi": lazy(() => import("./emi/EMI")),
     "compound-interest": lazy(() => import("./compound-interest/CompoundInterest")),
     "percentage": lazy(() => import("./percentage/Percentage")),
+    "bmi": lazy(() => import("./bmi/BMI")),
 };
