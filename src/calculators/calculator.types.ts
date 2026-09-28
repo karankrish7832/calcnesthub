@@ -10,7 +10,7 @@ export type CalculatorId =
     | "emi"
     | "loan"
     | "sip"
-    | "fd"
+    | "fixed-deposit"
     | "percentage"
     | "average"
     | "bmi"

@@ -32,7 +32,7 @@ export const calculators: Calculator[] = [
         path: "/calculators/sip",
     },
     {
-        id: "fd",
+        id: "fixed-deposit",
         translationKey: "calculators.fixedDeposit",
         category: "Financial",
         path: "/calculators/fixed-deposit",
