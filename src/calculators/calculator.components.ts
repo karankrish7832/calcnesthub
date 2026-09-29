@@ -9,4 +9,5 @@ export const calculatorComponents: Partial<
     "compound-interest": lazy(() => import("./compound-interest/CompoundInterest")),
     "percentage": lazy(() => import("./percentage/Percentage")),
     "bmi": lazy(() => import("./bmi/BMI")),
+    "age": lazy(() => import("./age/Age")),
 };
