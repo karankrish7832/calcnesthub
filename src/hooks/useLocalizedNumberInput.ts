@@ -106,7 +106,7 @@ export const useLocalizedNumberInput = ({
          *
          * 123
          * 123.
-         * 123.45
+         * -123.45
          *
          * or the locale equivalent.
          */
@@ -117,7 +117,7 @@ export const useLocalizedNumberInput = ({
             );
 
         const validPattern = new RegExp(
-            `^[0-9]*${escapedDecimal}?[0-9]*$`
+            `^-?[0-9]*${escapedDecimal}?[0-9]*$`
         );
 
         if (!validPattern.test(withoutGrouping)) {
@@ -312,11 +312,9 @@ const formatWhileEditing = (
         integerPart === ""
             ? ""
             : new Intl.NumberFormat(locale, {
-                  useGrouping: true,
-                  maximumFractionDigits: 0,
-              }).format(
-                  Number(integerPart)
-              );
+                useGrouping: true,
+                maximumFractionDigits: 0,
+            }).format(Number(integerPart));
 
     if (!hasDecimal) {
         return formattedInteger;
