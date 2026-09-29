@@ -26,6 +26,8 @@ const age = {
     nextBirthday: "Next Birthday",
     daysUntilBirthday: "Days Until Next Birthday",
     resultTitle: "Age Result",
+    enterDateOfBirth: "DD-MM-YYYY",
+    enterAsOfDate: "DD-MM-YYYY",
     validation: {
         dateOfBirthRequired:
             "Date of birth is required.",

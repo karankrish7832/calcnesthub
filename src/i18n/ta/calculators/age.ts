@@ -27,6 +27,8 @@ const age = {
     daysUntilBirthday:
         "அடுத்த பிறந்தநாளுக்கு மீதமுள்ள நாட்கள்",
     resultTitle: "வயது முடிவு",
+    enterDateOfBirth: "DD-MM-YYYY",
+    enterAsOfDate: "DD-MM-YYYY",
     validation: {
         dateOfBirthRequired:
             "பிறந்த தேதியை உள்ளிடவும்.",

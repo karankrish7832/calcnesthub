@@ -107,55 +107,43 @@ const Age = () => {
                     onSubmit={handleCalculate}
                     noValidate
                 >
-                    <DateInput
-                        id="dateOfBirth"
-                        name="dateOfBirth"
-                        label={t(
-                            "calculators.age.dateOfBirth"
-                        )}
-                        value={
-                            values.dateOfBirth
-                        }
-                        onChange={
-                            handleChange
-                        }
-                        max={
-                            values.asOfDate ||
-                            undefined
-                        }
-                        error={
-                            errors.dateOfBirth
-                                ? t(
-                                      errors.dateOfBirth
-                                  )
-                                : undefined
-                        }
-                    />
+                    <div className={styles.dateGroup}>
+                        <DateInput
+                            id="dateOfBirth"
+                            name="dateOfBirth"
+                            label={t(
+                                "calculators.age.dateOfBirth"
+                            )}
+                            placeholder={t(
+                                "calculators.age.enterDateOfBirth"
+                            )}
+                            value={values.dateOfBirth}
+                            onChange={handleChange}
+                            error={
+                                errors.dateOfBirth
+                                    ? t(errors.dateOfBirth)
+                                    : undefined
+                            }
+                        />
 
-                    <DateInput
-                        id="asOfDate"
-                        name="asOfDate"
-                        label={t(
-                            "calculators.age.asOfDate"
-                        )}
-                        value={
-                            values.asOfDate
-                        }
-                        onChange={
-                            handleChange
-                        }
-                        min={
-                            values.dateOfBirth ||
-                            undefined
-                        }
-                        error={
-                            errors.asOfDate
-                                ? t(
-                                      errors.asOfDate
-                                  )
-                                : undefined
-                        }
-                    />
+                        <DateInput
+                            id="asOfDate"
+                            name="asOfDate"
+                            label={t(
+                                "calculators.age.asOfDate"
+                            )}
+                            placeholder={t(
+                                "calculators.age.enterAsOfDate"
+                            )}
+                            value={values.asOfDate}
+                            onChange={handleChange}
+                            error={
+                                errors.asOfDate
+                                    ? t(errors.asOfDate)
+                                    : undefined
+                            }
+                        />
+                    </div>
 
                     <div
                         className={
