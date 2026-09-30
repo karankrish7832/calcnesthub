@@ -2,7 +2,6 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    Navigate,
 } from "react-router-dom";
 import CalculatorLayout from "../components/Layout/CalculatorLayout";
 import CalculatorPage from "../pages/CalculatorPage";
@@ -10,6 +9,7 @@ import Privacy from "../pages/Privacy/Privacy";
 import Terms from "../pages/Terms/Terms";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Contact from "../pages/Contact/Contact";
+import Home from "../pages/Home/Home";
 
 const AppRoutes = () => {
     return (
@@ -19,12 +19,7 @@ const AppRoutes = () => {
                 <Route element={<CalculatorLayout />}>
                     <Route
                         path="/"
-                        element={
-                            <Navigate
-                                to="/calculators/simple-interest"
-                                replace
-                            />
-                        }
+                        element={<Home />}
                     />
 
                     <Route

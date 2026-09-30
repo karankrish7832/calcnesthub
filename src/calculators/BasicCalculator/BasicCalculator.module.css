@@ -1,0 +1,156 @@
+.calculator {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: var(--bg-card);
+}
+
+.display {
+    display: block;
+    width: 100%;
+    min-height: 62px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    box-shadow: none;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 44px;
+    text-align: right;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    cursor: text;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.display:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: var(--border-color);
+}
+
+.display::-webkit-scrollbar {
+    height: 5px;
+}
+
+.display::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.display::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+.display::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(
+        4,
+        minmax(0, 1fr)
+    );
+    gap: 6px;
+}
+
+.key {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.1s ease;
+}
+
+.key:hover {
+    border-color: var(--brand-blue);
+}
+
+.key:active {
+    transform: scale(0.97);
+}
+
+.operator {
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+}
+
+.operator:hover {
+    background: var(--brand-blue);
+    color: #ffffff;
+}
+
+.clear {
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+.clear:hover {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+.action {
+    color: var(--text-secondary);
+}
+
+.equals {
+    grid-row: span 2;
+    border-color: var(--brand-blue);
+    background: var(--brand-blue);
+    color: #ffffff;
+}
+
+.equals:hover {
+    opacity: 0.9;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        max-width: 340px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .display {
+        min-height: 58px;
+        padding: 8px 10px;
+        font-size: 23px;
+        line-height: 40px;
+    }
+
+    .keypad {
+        gap: 5px;
+    }
+
+    .key {
+        min-height: 44px;
+        font-size: 16px;
+    }
+}
