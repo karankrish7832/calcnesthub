@@ -68,6 +68,76 @@
     box-shadow: 0 0 0 2px rgb(211 47 47 / 15%);
 }
 
+/* Floating label */
+
+.floatingWrapper {
+    position: relative;
+    min-height: 52px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.floatingWrapper:hover {
+    border-color: var(--brand-blue);
+}
+
+.floatingWrapper:focus-within {
+    border-color: var(--brand-blue);
+    box-shadow: 0 0 0 2px rgb(37 99 235 / 15%);
+}
+
+.floatingWrapperError {
+    border-color: #d32f2f;
+}
+
+.floatingWrapperError:focus-within {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 2px rgb(211 47 47 / 15%);
+}
+
+.floatingLabel {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 2;
+    padding: 0 4px;
+    transform: translateY(-50%);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.floatingWrapper:focus-within .floatingLabel {
+    color: var(--brand-blue);
+}
+
+.floatingSelect {
+    min-height: 52px;
+    padding: 14px 40px 14px 12px;
+    border: 0;
+    border-radius: 8px;
+    background-color: transparent;
+    background-position:
+        calc(100% - 18px) 22px,
+        calc(100% - 13px) 22px;
+}
+
+.floatingSelect:hover {
+    border-color: transparent;
+}
+
+.floatingSelect:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
 .error {
     margin: 0;
     color: #d32f2f;

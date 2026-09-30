@@ -19,6 +19,7 @@ const common = {
         privacy: "Privacy Policy",
         terms: "Terms & Conditions",
         allRightsReserved: "All rights reserved.",
+        contactUs: "Contact Us",
     },
 
     categories: {

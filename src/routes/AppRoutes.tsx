@@ -9,6 +9,7 @@ import CalculatorPage from "../pages/CalculatorPage";
 import Privacy from "../pages/Privacy/Privacy";
 import Terms from "../pages/Terms/Terms";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
+import Contact from "../pages/Contact/Contact";
 
 const AppRoutes = () => {
     return (
@@ -39,6 +40,11 @@ const AppRoutes = () => {
                     <Route
                         path="/terms"
                         element={<Terms />}
+                    />
+
+                    <Route
+                        path="/contact"
+                        element={<Contact />}
                     />
                 </Route>
             </Routes>

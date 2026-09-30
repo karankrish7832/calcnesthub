@@ -1,4 +1,5 @@
 import type { InputHTMLAttributes } from "react";
+
 import styles from "./InputField.module.css";
 
 interface InputFieldProps
@@ -7,6 +8,7 @@ interface InputFieldProps
     error?: string;
     prefix?: string;
     suffix?: string;
+    floatingLabel?: boolean;
 }
 
 const InputField = ({
@@ -14,24 +16,41 @@ const InputField = ({
     error,
     prefix,
     suffix,
+    floatingLabel = false,
     id,
+    value,
     ...inputProps
 }: InputFieldProps) => {
     return (
         <div className={styles.field}>
-            <label
-                className={styles.label}
-                htmlFor={id}
-            >
-                {label}
-            </label>
+            {!floatingLabel && (
+                <label
+                    className={styles.label}
+                    htmlFor={id}
+                >
+                    {label}
+                </label>
+            )}
 
             <div
                 className={`${styles.inputWrapper} ${
                     error ? styles.inputWrapperError : ""
+                } ${
+                    floatingLabel
+                        ? styles.floatingInputWrapper
+                        : ""
                 }`}
             >
-               {prefix && (
+                {floatingLabel && (
+                    <label
+                        className={styles.floatingLabel}
+                        htmlFor={id}
+                    >
+                        {label}
+                    </label>
+                )}
+
+                {prefix && (
                     <span
                         className={`${styles.affix} ${styles.prefixAffix}`}
                     >
@@ -42,6 +61,7 @@ const InputField = ({
                 <input
                     id={id}
                     className={styles.input}
+                    value={value}
                     {...inputProps}
                 />
 

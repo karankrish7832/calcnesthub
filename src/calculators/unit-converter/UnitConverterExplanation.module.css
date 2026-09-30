@@ -1,0 +1,79 @@
+.explanation {
+    margin-top: 32px;
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--bg-card);
+}
+
+.explanation h2 {
+    margin: 0 0 20px;
+    color: var(--text-primary);
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.explanation h3 {
+    margin: 28px 0 12px;
+    color: var(--text-primary);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.explanation p {
+    margin: 0 0 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.explanation ol,
+.explanation ul {
+    margin: 0;
+    padding-left: 24px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.explanation li {
+    margin-bottom: 6px;
+}
+
+.formula {
+    margin: 20px 0;
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.faq {
+    margin-top: 32px;
+}
+
+.faqList {
+    display: grid;
+    gap: 12px;
+}
+
+.faqList p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .explanation {
+        margin-top: 24px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .explanation h2 {
+        font-size: 22px;
+    }
+
+    .explanation h3 {
+        font-size: 17px;
+    }
+}

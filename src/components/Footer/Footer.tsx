@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -23,6 +22,10 @@ const Footer = () => {
 
                     <Link to="/terms">
                         {t("footer.terms")}
+                    </Link>
+
+                    <Link to="/contact">
+                        {t("footer.contactUs")}
                     </Link>
                 </nav>
             </div>
