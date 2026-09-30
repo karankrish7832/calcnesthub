@@ -21,6 +21,10 @@
     color: var(--text-secondary);
 }
 
+.page a {
+    color: var(--brand-blue);
+}
+
 .updated {
     margin-bottom: 32px !important;
     font-size: 14px;

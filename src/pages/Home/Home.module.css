@@ -85,6 +85,8 @@
     color: var(--brand-blue);
 }
 
+/* Basic Calculator */
+
 .calculatorSection {
     margin-top: 40px;
     padding: 32px;
@@ -92,6 +94,68 @@
     border-radius: 16px;
     background: var(--bg-card);
 }
+
+.calculatorSection > .sectionHeader {
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.calculatorSection > .sectionHeader h2 {
+    margin: 0 0 10px;
+    color: var(--text-primary);
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.calculatorSection > .sectionHeader p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.calculatorContent {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 520px);
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calculatorWrapper {
+    width: 100%;
+}
+
+.calculatorExplanation {
+    max-width: 520px;
+}
+
+.calculatorExplanation h2 {
+    margin: 0 0 12px;
+    color: var(--text-primary);
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.calculatorExplanation p {
+    margin: 0 0 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.calculatorExplanation ul {
+    margin: 0 0 20px;
+    padding-left: 22px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.calculatorExplanation li {
+    margin-bottom: 6px;
+}
+
+/* Common Sections */
 
 .section {
     margin-top: 56px;
@@ -175,6 +239,8 @@
     font-weight: 600;
 }
 
+/* Features */
+
 .featuresSection {
     margin-top: 56px;
     padding: 40px 32px;
@@ -206,6 +272,8 @@
     line-height: 1.6;
 }
 
+/* CTA */
+
 .ctaSection {
     margin-top: 56px;
     padding: 48px 24px;
@@ -228,6 +296,8 @@
     line-height: 1.7;
 }
 
+/* Tablet */
+
 @media (max-width: 900px) {
     .calculatorGrid {
         grid-template-columns: repeat(2, 1fr);
@@ -237,7 +307,14 @@
     .featureGrid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .calculatorContent {
+        grid-template-columns: 340px minmax(0, 1fr);
+        gap: 36px;
+    }
 }
+
+/* Mobile */
 
 @media (max-width: 768px) {
     .hero {
@@ -261,6 +338,48 @@
 
     .section {
         margin-top: 40px;
+    }
+
+    .calculatorContent {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .calculatorWrapper {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .calculatorExplanation {
+        max-width: 100%;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 599px) {
+    .calculatorSection {
+        padding: 24px 16px;
+    }
+
+    .calculatorSection > .sectionHeader {
+        margin-bottom: 24px;
+    }
+
+    .calculatorSection > .sectionHeader h2 {
+        font-size: 24px;
+    }
+
+    .calculatorContent {
+        gap: 28px;
+    }
+
+    .calculatorWrapper {
+        max-width: 340px;
+    }
+
+    .calculatorExplanation h2 {
+        font-size: 22px;
     }
 }
 

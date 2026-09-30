@@ -158,8 +158,64 @@ const Home = () => {
                     </p>
                 </div>
 
-                <BasicCalculator />
-            </section>
+                <div className={styles.calculatorContent}>
+                    <div className={styles.calculatorWrapper}>
+                        <BasicCalculator />
+                    </div>
+
+                    <div className={styles.calculatorExplanation}>
+                        <p className={styles.eyebrow}>
+                            {t(
+                                "home.basicCalculator.explanationEyebrow"
+                            )}
+                        </p>
+
+                        <h2>
+                            {t(
+                                "home.basicCalculator.explanationTitle"
+                            )}
+                        </h2>
+
+                        <p>
+                            {t(
+                                "home.basicCalculator.explanationDescription"
+                            )}
+                        </p>
+
+                        <ul>
+                            <li>
+                                {t(
+                                    "home.basicCalculator.feature1"
+                                )}
+                            </li>
+
+                            <li>
+                                {t(
+                                    "home.basicCalculator.feature2"
+                                )}
+                            </li>
+
+                            <li>
+                                {t(
+                                    "home.basicCalculator.feature3"
+                                )}
+                            </li>
+
+                            <li>
+                                {t(
+                                    "home.basicCalculator.feature4"
+                                )}
+                            </li>
+                        </ul>
+
+                        <p>
+                            {t(
+                                "home.basicCalculator.example"
+                            )}
+                        </p>
+                    </div>
+                </div>
+            </section>  
 
             <section className={styles.section}>
                 <div className={styles.sectionHeader}>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import { useTranslation } from "react-i18next";
 
 import styles from "./Terms.module.css";
@@ -20,7 +21,9 @@ const Terms = () => {
 
             <section>
                 <h2>
-                    {t("terms.acceptanceOfTerms.title")}
+                    {t(
+                        "terms.acceptanceOfTerms.title"
+                    )}
                 </h2>
 
                 <p>
@@ -32,7 +35,9 @@ const Terms = () => {
 
             <section>
                 <h2>
-                    {t("terms.useOfCalculators.title")}
+                    {t(
+                        "terms.useOfCalculators.title"
+                    )}
                 </h2>
 
                 <p>
@@ -50,7 +55,9 @@ const Terms = () => {
 
             <section>
                 <h2>
-                    {t("terms.financialInformation.title")}
+                    {t(
+                        "terms.financialInformation.title"
+                    )}
                 </h2>
 
                 <p>
@@ -67,6 +74,46 @@ const Terms = () => {
             </section>
 
             <section>
+                <h2>
+                    {t(
+                        "terms.healthInformation.title"
+                    )}
+                </h2>
+
+                <p>
+                    {t(
+                        "terms.healthInformation.paragraph1"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "terms.healthInformation.paragraph2"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t(
+                        "terms.userResponsibility.title"
+                    )}
+                </h2>
+
+                <p>
+                    {t(
+                        "terms.userResponsibility.paragraph1"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "terms.userResponsibility.paragraph2"
+                    )}
+                </p>
+            </section>
+
+            <section>
                 <h2>{t("terms.accuracy.title")}</h2>
 
                 <p>
@@ -75,10 +122,56 @@ const Terms = () => {
             </section>
 
             <section>
-                <h2>{t("terms.availability.title")}</h2>
+                <h2>
+                    {t(
+                        "terms.prohibitedUse.title"
+                    )}
+                </h2>
 
                 <p>
-                    {t("terms.availability.paragraph")}
+                    {t(
+                        "terms.prohibitedUse.paragraph"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t(
+                        "terms.intellectualProperty.title"
+                    )}
+                </h2>
+
+                <p>
+                    {t(
+                        "terms.intellectualProperty.paragraph"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t(
+                        "terms.thirdPartyServices.title"
+                    )}
+                </h2>
+
+                <p>
+                    {t(
+                        "terms.thirdPartyServices.paragraph"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t("terms.availability.title")}
+                </h2>
+
+                <p>
+                    {t(
+                        "terms.availability.paragraph"
+                    )}
                 </p>
             </section>
 
@@ -98,11 +191,23 @@ const Terms = () => {
 
             <section>
                 <h2>
-                    {t("terms.changesToTerms.title")}
+                    {t(
+                        "terms.changesToTerms.title"
+                    )}
                 </h2>
 
                 <p>
-                    {t("terms.changesToTerms.paragraph")}
+                    {t(
+                        "terms.changesToTerms.paragraph"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>{t("terms.contact.title")}</h2>
+
+                <p>
+                    {t("terms.contact.paragraph")}
                 </p>
             </section>
         </article>

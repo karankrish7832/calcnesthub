@@ -14,6 +14,30 @@ const home = {
         title: "Basic Calculator",
         description:
             "Perform quick calculations with addition, subtraction, multiplication, and division.",
+
+        explanationEyebrow:
+            "Quick & Easy Calculations",
+
+        explanationTitle:
+            "A Simple Calculator for Everyday Math",
+
+        explanationDescription:
+            "Use the CalcNestHub Basic Calculator to perform everyday arithmetic calculations quickly and easily. Enter numbers using the keypad or your keyboard and get instant results.",
+
+        feature1:
+            "Addition, subtraction, multiplication, and division",
+
+        feature2:
+            "Supports decimal and negative numbers",
+
+        feature3:
+            "Edit calculations directly from the display",
+
+        feature4:
+            "Results are calculated instantly",
+
+        example:
+            "For example, enter 125 + 75 and press = to get 200.",
     },
 
     popularCalculators: {

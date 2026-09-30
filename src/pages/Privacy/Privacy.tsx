@@ -1,5 +1,7 @@
 import { useEffect } from "react";
+
 import { useTranslation } from "react-i18next";
+
 import styles from "./Privacy.module.css";
 
 const Privacy = () => {
@@ -18,20 +20,28 @@ const Privacy = () => {
             </p>
 
             <section>
-                <h2>{t("privacy.introduction.title")}</h2>
+                <h2>
+                    {t("privacy.introduction.title")}
+                </h2>
 
                 <p>
-                    {t("privacy.introduction.paragraph1")}
+                    {t(
+                        "privacy.introduction.paragraph1"
+                    )}
                 </p>
 
                 <p>
-                    {t("privacy.introduction.paragraph2")}
+                    {t(
+                        "privacy.introduction.paragraph2"
+                    )}
                 </p>
             </section>
 
             <section>
                 <h2>
-                    {t("privacy.informationWeCollect.title")}
+                    {t(
+                        "privacy.informationWeCollect.title"
+                    )}
                 </h2>
 
                 <p>
@@ -54,15 +64,29 @@ const Privacy = () => {
             </section>
 
             <section>
-                <h2>{t("privacy.calculatorData.title")}</h2>
+                <h2>
+                    {t("privacy.calculatorData.title")}
+                </h2>
 
                 <p>
-                    {t("privacy.calculatorData.paragraph")}
+                    {t(
+                        "privacy.calculatorData.paragraph1"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.calculatorData.paragraph2"
+                    )}
                 </p>
             </section>
 
             <section>
-                <h2>{t("privacy.countryAndPreferences.title")}</h2>
+                <h2>
+                    {t(
+                        "privacy.countryAndPreferences.title"
+                    )}
+                </h2>
 
                 <p>
                     {t(
@@ -90,40 +114,74 @@ const Privacy = () => {
             </section>
 
             <section>
-                <h2>{t("privacy.googleAnalytics.title")}</h2>
+                <h2>
+                    {t("privacy.localStorage.title")}
+                </h2>
 
                 <p>
-                    {t("privacy.googleAnalytics.paragraph1")}
+                    {t(
+                        "privacy.localStorage.paragraph1"
+                    )}
                 </p>
 
                 <p>
-                    {t("privacy.googleAnalytics.paragraph2")}
-                </p>
-
-                <p>
-                    {t("privacy.googleAnalytics.paragraph3")}
-                </p>
-
-                <p>
-                    {t("privacy.googleAnalytics.paragraph4")}{" "}
-                    <a
-                        href="https://policies.google.com/technologies/partner-sites"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {t("privacy.googleAnalytics.googleLink")}
-                    </a>
-                    .
-                </p>
-
-                <p>
-                    {t("privacy.googleAnalytics.paragraph5")}
+                    {t(
+                        "privacy.localStorage.paragraph2"
+                    )}
                 </p>
             </section>
 
             <section>
                 <h2>
-                    {t("privacy.thirdPartyServices.title")}
+                    {t("privacy.googleAnalytics.title")}
+                </h2>
+
+                <p>
+                    {t(
+                        "privacy.googleAnalytics.paragraph1"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.googleAnalytics.paragraph2"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.googleAnalytics.paragraph3"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.googleAnalytics.paragraph4"
+                    )}{" "}
+                    <a
+                        href="https://policies.google.com/technologies/partner-sites"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {t(
+                            "privacy.googleAnalytics.googleLink"
+                        )}
+                    </a>
+                    .
+                </p>
+
+                <p>
+                    {t(
+                        "privacy.googleAnalytics.paragraph5"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t(
+                        "privacy.thirdPartyServices.title"
+                    )}
                 </h2>
 
                 <p>
@@ -137,6 +195,36 @@ const Privacy = () => {
                         "privacy.thirdPartyServices.paragraph2"
                     )}
                 </p>
+
+                <p>
+                    {t(
+                        "privacy.thirdPartyServices.paragraph3"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t("privacy.dataSecurity.title")}
+                </h2>
+
+                <p>
+                    {t(
+                        "privacy.dataSecurity.paragraph"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t("privacy.children.title")}
+                </h2>
+
+                <p>
+                    {t(
+                        "privacy.children.paragraph"
+                    )}
+                </p>
             </section>
 
             <section>
@@ -145,12 +233,16 @@ const Privacy = () => {
                 </h2>
 
                 <p>
-                    {t("privacy.changesToPolicy.paragraph")}
+                    {t(
+                        "privacy.changesToPolicy.paragraph"
+                    )}
                 </p>
             </section>
 
             <section>
-                <h2>{t("privacy.contact.title")}</h2>
+                <h2>
+                    {t("privacy.contact.title")}
+                </h2>
 
                 <p>
                     {t("privacy.contact.paragraph")}
