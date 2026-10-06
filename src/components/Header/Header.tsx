@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/calcnest-logo.svg";
 import mobileLogo from "../../assets/images/calcnest-mobile-logo.png";
 import moonIcon from "../../assets/images/moon.svg";
@@ -10,12 +10,14 @@ import styles from "./Header.module.css";
 interface HeaderProps {
     onLogoClick: () => void;
     onMenuClick: () => void;
+    onHomeClick: () => void;
     isSidebarOpen: boolean;
 }
 
 const Header = ({
     onLogoClick,
     onMenuClick,
+    onHomeClick,
     isSidebarOpen,
 }: HeaderProps) => {
     const { theme, toggleTheme } = useTheme();
@@ -61,6 +63,21 @@ const Header = ({
                 </Link>
 
                 <div className={styles.headerActions}>
+                    <NavLink
+                        to="/"
+                        end
+                        className={({ isActive }) =>
+                            `${styles.homeLink} ${
+                                isActive
+                                    ? styles.homeLinkActive
+                                    : ""
+                            }`
+                        }
+                        onClick={onHomeClick}
+                    >
+                        {t("header.home")}
+                    </NavLink>
+
                     <button
                         type="button"
                         className={`${styles.themeToggle} ${

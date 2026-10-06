@@ -140,6 +140,23 @@
     margin-left: auto;
 }
 
+.homeLink {
+    margin-right: 16px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.homeLink:hover {
+    color: var(--brand-blue);
+}
+
+.homeLinkActive {
+    color: var(--brand-blue);
+}
+
 .desktopLanguage {
     display: block;
 }

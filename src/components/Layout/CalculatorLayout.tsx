@@ -41,6 +41,7 @@ const CalculatorLayout = () => {
             <Header
                 onLogoClick={clearSearch}
                 onMenuClick={toggleSidebar}
+                onHomeClick={closeSidebar}
                 isSidebarOpen={isSidebarOpen}
             />
 
