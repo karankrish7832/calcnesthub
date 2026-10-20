@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import BasicCalculator from "../../calculators/BasicCalculator/BasicCalculator";
+import BasicCalculator from "../../calculators/basicCalculator/BasicCalculator";
 
 import styles from "./Home.module.css";
 
