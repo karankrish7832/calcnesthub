@@ -8,6 +8,7 @@ const staticRoutes = [
     "/",
     "/privacy",
     "/terms",
+    "/contact"
 ];
 
 const calculatorRoutes = calculators.map((calculator) => calculator.path);
