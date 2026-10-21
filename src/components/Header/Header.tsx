@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/images/calcnest-logo.svg";
+import lightLogo from "../../assets/images/calcnest-logo-light.png";
+import darkLogo from "../../assets/images/calcnest-logo-dark.png";
 import mobileLogo from "../../assets/images/calcnest-mobile-logo.png";
 import moonIcon from "../../assets/images/moon.svg";
 import sunIcon from "../../assets/images/sun.svg";
@@ -53,11 +54,11 @@ const Header = ({
                         />
 
                         <img
-                            src={logo}
+                            src={theme === "dark" ? darkLogo : lightLogo}
                             alt="CalcNestHub"
                             className={styles.logo}
-                            width={249}
-                            height={150}
+                            // width={249}
+                            // height={150}
                         />
                     </picture>
                 </Link>
