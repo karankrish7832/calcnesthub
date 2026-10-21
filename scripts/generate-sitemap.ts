@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { calculators } from "../src/calculators/calculator.registry.ts";
 
-const BASE_URL = "https://calcnest-hub.vercel.app";
+const BASE_URL = "https://calcnesthub.vercel.app";
 
 const staticRoutes = [
     "/",
