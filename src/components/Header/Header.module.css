@@ -30,7 +30,7 @@
     width: 230px;
     height: auto;
     object-fit: contain;
-    margin-top: 7px;
+    display: flex;
 }
 
 .menuButton {
