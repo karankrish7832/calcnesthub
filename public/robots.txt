@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://calcnest-hub.vercel.app/sitemap.xml
+Sitemap: https://calcnesthub.vercel.app/sitemap.xml

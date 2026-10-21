@@ -6,7 +6,7 @@ import CalculatorLoader from "../components/CalculatorLoader/CalculatorLoader";
 import ComingSoon from "../components/ComingSoon/ComingSoon";
 import { useTranslation } from "react-i18next";
 
-const BASE_URL = "https://calcnest-hub.vercel.app";
+const BASE_URL = "https://calcnesthub.vercel.app";
 
 const CalculatorPage = () => {
     const { t } = useTranslation();

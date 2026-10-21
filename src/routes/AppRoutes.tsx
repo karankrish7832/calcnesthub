@@ -10,11 +10,13 @@ import Terms from "../pages/Terms/Terms";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Contact from "../pages/Contact/Contact";
 import Home from "../pages/Home/Home";
+import SEO from "../components/SEO/SEO";
 
 const AppRoutes = () => {
     return (
         <BrowserRouter>
             <ScrollToTop/>
+             <SEO />
             <Routes>
                 <Route element={<CalculatorLayout />}>
                     <Route
