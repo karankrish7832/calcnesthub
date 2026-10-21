@@ -13,4 +13,5 @@ export const calculatorComponents: Partial<
     "age": lazy(() => import("./age/Age")),
     "average": lazy(() => import("./average/Average")),
     "unit-converter": lazy(() => import("./unit-converter/UnitConverter")),
+    "sip": lazy(() => import("./sip/SIP")),
 };
