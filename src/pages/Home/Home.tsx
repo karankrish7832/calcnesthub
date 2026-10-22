@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
-import BasicCalculator from "../../calculators/basicCalculator/BasicCalculator";
-
+import { lazy, Suspense } from "react";
 import styles from "./Home.module.css";
+
+const BasicCalculator = lazy(() => import("../../calculators/basicCalculator/BasicCalculator"));
 
 const Home = () => {
     const { t } = useTranslation();
@@ -160,7 +160,9 @@ const Home = () => {
 
                 <div className={styles.calculatorContent}>
                     <div className={styles.calculatorWrapper}>
-                        <BasicCalculator />
+                        <Suspense fallback={<p>Loading calculator...</p>}>
+                            <BasicCalculator />
+                        </Suspense>
                     </div>
 
                     <div className={styles.calculatorExplanation}>
