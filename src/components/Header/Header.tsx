@@ -1,11 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import lightLogo from "../../assets/images/calcnest-logo-light.png";
 import darkLogo from "../../assets/images/calcnest-logo-dark.png";
 import mobileLogo from "../../assets/images/calcnest-mobile-logo.png";
 import moonIcon from "../../assets/images/moon.svg";
 import sunIcon from "../../assets/images/sun.svg";
 import { useTheme } from "../../context/ThemeContext";
-import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 
 interface HeaderProps {
@@ -51,14 +51,15 @@ const Header = ({
                         <source
                             media="(max-width: 768px)"
                             srcSet={mobileLogo}
+                            width={180}
+                            height={180}
                         />
-
                         <img
                             src={theme === "dark" ? darkLogo : lightLogo}
                             alt="CalcNestHub"
                             className={styles.logo}
-                            width={230}
-                            height={40}
+                            width={2048}
+                            height={568}
                         />
                     </picture>
                 </Link>
@@ -69,9 +70,7 @@ const Header = ({
                         end
                         className={({ isActive }) =>
                             `${styles.homeLink} ${
-                                isActive
-                                    ? styles.homeLinkActive
-                                    : ""
+                                isActive ? styles.homeLinkActive : ""
                             }`
                         }
                         onClick={onHomeClick}
@@ -98,7 +97,7 @@ const Header = ({
                                     alt=""
                                     className={styles.sunIcon}
                                 />
-
+                                
                                 <img
                                     src={moonIcon}
                                     alt=""
